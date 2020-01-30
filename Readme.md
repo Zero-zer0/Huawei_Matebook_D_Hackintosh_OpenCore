@@ -9,7 +9,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 | Graphics Cards | Intel UHD620 / nVidia MX150                                                                                        |
 | Memory         | 8GB*2 DDR4 2400                                                                                                    |
 | Keyboard       | PS2 Keyboard without backlight🙃                                                                                   |
-| Trackpad       | ELAN2202(Requires _OSI Patch to enable APCI interrupt)                                                             |
+| Trackpad       | ELAN2202(Requires _OSI Patch to enable GPIO interrupt on macOS)                                                             |
 | Sound Card     | ALC256                                                                                                             |
 | Screen         | 15.6‘ 1920x1080                                                                                                    |
 | SSD            | Hikivision C2000 512GB + LITE-ON 128GB SATA m.2                                                                    |

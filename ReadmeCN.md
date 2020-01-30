@@ -7,7 +7,7 @@
 | 显卡 | Intel UHD620 / nVidia MX150                                                                                        |
 | 内存         | 8GB*2 DDR4 2400                                                                                                    |
 | 键盘     | PS2 键盘，没背光🙃                                                                                   |
-| 触摸板       | ELAN2202（需要_OSI补丁以启用APCI中断）                                                             |
+| 触摸板       | ELAN2202（需要_OSI补丁以启用GPIO中断）                                                             |
 | 声卡     | ALC256                                                                                                             |
 | 屏幕         | 15.6‘ 1920x1080                                                                                                    |
 | SSD            | Hikivision C2000 512GB + LITE-ON 128GB SATA m.2                                                                    |
@@ -23,7 +23,7 @@
 * 基于OpenCore 0.5.3 
 <br>
 
-* 原生(?) NVRAM 正常工作。
+* NVRAM 正常工作。
 <br>
 * 声卡 Layout-ID 21 一切正常。  
 
