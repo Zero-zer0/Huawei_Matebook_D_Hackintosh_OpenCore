@@ -40,7 +40,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 * **Use `USBInjectall.kext` to avoid potential USB map differences. However, customizing your own `USBports.kext` by [Hackintool](http://headsoft.com.au/download/mac/Hackintool.zip) is STRONGLY RECOMMENDED. You can read the help document inside for more details.**
 
 
-* This EFI may also works on Magicbook 14 Kabylake-R. ( Just I guess, it may need some minor modifications)
+* This EFI may also works on Magicbook 14 Kabylake-R. However, Layout-ID may need to set as `56` or `57` ( May need more modifications)
 
 * You may need to use your own System-UUID when you need dual boot with Windows 10.  
 

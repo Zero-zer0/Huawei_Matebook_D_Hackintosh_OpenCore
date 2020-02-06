@@ -1,6 +1,6 @@
 # Matebook_D_Hackintosh_OpenCore
 
-## 华为 Matebook D 2018 (I7 8550U) (同样适用于 荣耀Magicbook 2018 Intel版，经反馈没有什么问题)
+## 华为 Matebook D 2018 (I7 8550U) (同样适用于 荣耀Magicbook 2018 Intel版，经反馈没有太大问题)
 
 | 部件 | 配置                                                                                                            |
 |:--------------:|:------------------------------------------------------------------------------------------------------------------:|
@@ -43,8 +43,7 @@
 * **使用 `USBInjectall.kext` 避免潜在的USB map不一样的问题，增强通用性质。建议自己定制 `USBports.kext` 用 [Hackintool](http://headsoft.com.au/download/mac/Hackintool.zip) 就可，教程很多。**
 <br>
 
-
-* 这个EFI也可以用在MagicBook 14（Kabylake-R）上。
+* 这个EFI也可以用在MagicBook 14（Kabylake-R）上。 **如果使用`Magicbook 2018`，声卡Layout-ID 需要改为 `56` 或 `57`** (声卡ID使用Device Properties注入)
 <br>
 
 * 用之前填写自己的System-UUID。
@@ -52,7 +51,7 @@
 
 * 小问题: 
     1. ~~再唤醒后，屏幕背光需要再次开启盖子才能打开.~~    
-    现在使用 `SSDT-LID-Wake-After-Sleep` 修复, 感谢 [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook) <br>   
+    现在使用 `SSDT-LID-Wake-After-Sleep` 修复, 感谢 [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook) <br> 
     我加入了 `_OSI`  判断满足OC的多启动需求，虽然不推荐用OC启动Windows/Linux。 
      <br>
 
@@ -65,10 +64,11 @@
 
 * ~~Improvements on Hibernation.~~
 
-* BIOS 解锁教程.
+* BIOS 解锁教程.（咕咕咕）
 
 * ~~Windows 10 启动项~~<br>直接用BIOS的启动菜单吧  <br>
 
+* 解决一些奇怪的ACPI Error（不影响使用）
 
 
 ------
