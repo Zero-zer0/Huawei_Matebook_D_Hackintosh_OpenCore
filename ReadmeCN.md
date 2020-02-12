@@ -11,8 +11,9 @@
 | 声卡     | ALC256                                                                                                             |
 | 屏幕         | 15.6‘ 1920x1080                                                                                                    |
 | SSD            | Hikivision C2000 512GB + LITE-ON 128GB SATA m.2                                                                    |
-| WiFi+BT        | Apple Broadcom BCM94360CS2                                                                                         |
-| 处理器      | Intel Core I5 8250U / I7 8550U (如果你在使用I5-8250U版本，需要自行定制CPUFriendDataProvider) |
+| WiFi+BT        | Broadcom BCM94360CS2                                                                                         |
+| 处理器      | Intel Core i5 8250U / i7 8550U (如果你在使用I5-8250U版本，需要自行定制CPUFriendDataProvider) |
+| BIOS  |    1.30 <br> Secure Boot(安全启动): `OFF`;  Hardware P-Status(HWP，硬件P状态）: `ON`  |
 
 ---------
 
@@ -25,6 +26,7 @@
 
 * NVRAM 正常工作。
 <br>
+
 * 声卡 Layout-ID 21 一切正常。  
 
 * ~~CFG被锁了，但是一切能用~~
@@ -49,6 +51,8 @@
 * 用之前填写自己的System-UUID。
 <br>
 
+* 如果换了NVMe SSD，可以尝试使用NVMeFix.kext以获得更好的续航。
+
 * 小问题: 
     1. ~~再唤醒后，屏幕背光需要再次开启盖子才能打开.~~    
     现在使用 `SSDT-LID-Wake-After-Sleep` 修复, 感谢 [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook) <br> 
@@ -57,18 +61,33 @@
 
     2. 安装过程中，触摸板不工作，需要自己准备一个USB鼠标
 ------
+## `ACPI Error`相关
+该hackintosh EFI可能存在一些与“动态OEM表”有关的ACPI问题。    
+
+`动态OEM表`是由固件根据您计算机的当前电源状态动态生成的一组SSDT。这些表通过“ _PPC”将当前电源状态传输到系统，这个玩意会被`EC0`的`_QA6`调用，它们与CPU电源管理有关。  
+
+奇怪的是，这些表无法由OpenCore自动加载。更糟糕的是，macOS可能因卡在与`_QA6`和`_PPC`有关的`APCI Error`而无法启动。
+
+我们可以通过强制加载这些动态SSDT来解决这个问题。  
+1. 使用`Clover`启动Matebook D或Magicbook 2018，
+2. 按`F4` 提取整个ACPI表。
+3. 查找所有动态SSDT，其序列号前面有一个x。 <br>例如，`SSDT-x3_0-Cpu0Ist.aml`，`SSDT-x3_1-ApIst.aml` ...
+4. 将所有这些`动态SSDT`放入EFI / OC / ACPI
+5. 将这些`SSDT`添加到`config.plist--ACPI--Add`下，根据其他SSDT填写的格式写就好。
+6. 重新启动并检查，看看相关的ACPI Error是否消失了呢 XD.
+--------
 
 ## TODOs
 
 * ~~Chinese version of this document(简体中文文档会有的，不过现在用翻译器也能看，I'm just lazy)~~
 
-* ~~Improvements on Hibernation.~~
+* ~~Improvements on Hibernation.~~（这机器的电池太TM垃圾了，3400mAh，11.4V用个卵哦）
 
 * BIOS 解锁教程.（咕咕咕）
 
 * ~~Windows 10 启动项~~<br>直接用BIOS的启动菜单吧  <br>
 
-* 解决一些奇怪的ACPI Error（不影响使用）
+* ~~解决一些奇怪的ACPI Error（不影响使用）~~
 
 
 ------
