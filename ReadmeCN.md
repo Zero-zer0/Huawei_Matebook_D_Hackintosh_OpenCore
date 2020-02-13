@@ -51,7 +51,9 @@
 * 用之前填写自己的System-UUID。
 <br>
 
-* 如果换了NVMe SSD，可以尝试使用NVMeFix.kext以获得更好的续航。
+* 如果换了NVMe SSD，可以尝试使用NVMeFix.kext以获得更好的续航。  
+
+* 加入`SSDT-TPD0.dsl` 以抛弃`SSDT-OC-XOSI`来启用触摸板的GPIO中断。**注意，这个文件无法直接使用，请看其中的说明。**
 
 * 小问题: 
     1. ~~再唤醒后，屏幕背光需要再次开启盖子才能打开.~~    

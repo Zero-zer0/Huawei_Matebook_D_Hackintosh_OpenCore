@@ -51,7 +51,9 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
     I added an `_OSI`  determination to meet the needs of dual boot with Windows/Linux by OpenCore though it's not recommended.  
 
     2. Trackpad doesn't work and a USB mouse is needed when installing.  
-* If you have an NVMe ssd and want to have a better battery life, have a try on NVMeFix.kext.
+* If you have an NVMe ssd and want to have a better battery life, have a try on NVMeFix.kext.  
+
+* Added `SSDT-TPD0.dsl` for touchpad GPIO interrupt mode, in case of you don't want dirty `SSDT-XOSI`.
 
 ------
 ## Something related to `ACPI Errors`
