@@ -3,7 +3,7 @@
 Language:   
 English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackintosh_OpenCore/blob/master/ReadmeCN.md)
 ## Huawei Matebook D 2018 (I7 8550U)
-### Also works on Magicbook 2018 Intel Edition!
+
 
 | Specifications | Details                                                                                                            |
 |:--------------:|:------------------------------------------------------------------------------------------------------------------:|
@@ -23,7 +23,26 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 
 ### **Basic knowledge on OpenCore is needed!**
 
-* Based on OpenCore Official Release 0.5.3
+#### 2020-Mar.-9  Update to Opencore 0.5.5
+
+1. Temporarily remove `SMCBatteryManager`. Turn to use` ACPIBatteryManager` which performs better.
+2. Thanks to [iStarForever](https://github.com/XStar-Dev) for making a battery hot patch `SSDT-BAT1-HUAWEI` for this machine, which fixes some battery errors in ACPI.
+ In addition, a power state repair method by RehabMan was refferd of RehabMan, [click here for details](https://www.tonymacx86.com/threads/solved-battery-charging-and-status-update-problem.263737/page-3)
+
+3. Added `SSDT-PTSWAK` to fix the problem of the power re-electrified to DGPU after waking up.
+
+4. Use the `Preset Variable Method` to force the touchpad to enable GPIO interrupts and discard` SSDT-OC-XOSI`
+
+5. Due to the increase of ACPI customized content, support for `Honor Magicbook 2018` is removed. You can refer to [here](https://github.com/hjmmc/Honor-Magicbook) for Honor Magicbook 2018.
+
+6. Force to load the dynamic tables related to `_PPC`.
+
+7. If you need to boot `Windows 10` by OpenCore , please read the related documents to add support.
+
+
+
+#### Earlier status
+* Based on OpenCore Official Release ~~0.5.3~~ 0.5.5
 
 * Native NVRAM works.
 
@@ -41,7 +60,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 * **Use `USBInjectall.kext` to avoid potential USB map differences. However, customizing your own `USBports.kext` by [Hackintool](http://headsoft.com.au/download/mac/Hackintool.zip) is STRONGLY RECOMMENDED. You can read the help document inside for more details.**
 
 
-* This EFI may also works on Magicbook 14 Kabylake-R. However, Layout-ID may need to set as `56` or `57` ( May need more modifications)
+* ~~This EFI may also works on Magicbook 14 Kabylake-R. However, Layout-ID may need to set as `56` or `57` ( May need more modifications)~~
 
 * You may need to use your own System-UUID when you need dual boot with Windows 10.  
 
@@ -53,7 +72,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
     2. Trackpad doesn't work and a USB mouse is needed when installing.  
 * If you have an NVMe ssd and want to have a better battery life, have a try on NVMeFix.kext.  
 
-* Added `SSDT-TPD0.dsl` for touchpad GPIO interrupt mode, in case of you don't want dirty `SSDT-XOSI`.
+* ~~Added `SSDT-TPD0.dsl` for touchpad GPIO interrupt mode, in case of you don't want dirty `SSDT-XOSI`.~~
 
 ------
 ## Something related to `ACPI Errors`
@@ -76,7 +95,7 @@ A solution to this problem is making these tables force loaded by bootloader.
 
 * ~~Improvements on Hibernation.~~(**The Battery SUCKS!**)
 
-* BIOS unlock tutorial.
+* ~~BIOS unlock tutorial.~~
 
 * ~~Windows 10 startup item in OpenCore (I think using boot menu is a better choice)~~  <br>
 
@@ -101,6 +120,8 @@ A solution to this problem is making these tables force loaded by bootloader.
 7. The Clover EFI I have used by [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
 
 8. The LID and Brightness-Key fix by [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook)
+
+9. The battery hotpatch by [iStarForever](https://github.com/XStar-Dev) 
 
 -----
 ## Screenshot & How I put BCM94360CS2 into the laptop
