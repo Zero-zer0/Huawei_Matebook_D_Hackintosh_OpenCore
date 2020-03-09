@@ -27,11 +27,11 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 
 1. Temporarily remove `SMCBatteryManager`. Turn to use` ACPIBatteryManager` which performs better.
 2. Thanks to [iStarForever](https://github.com/XStar-Dev) for making a battery hot patch `SSDT-BAT1-HUAWEI` for this machine, which fixes some battery errors in ACPI.
- In addition, a power state repair method by RehabMan was refferd of RehabMan, [click here for details](https://www.tonymacx86.com/threads/solved-battery-charging-and-status-update-problem.263737/page-3)
+ In addition, a power state repair method by RehabMan was refferd, [click here for details](https://www.tonymacx86.com/threads/solved-battery-charging-and-status-update-problem.263737/page-3)
 
 3. Added `SSDT-PTSWAK` to fix the problem of the power re-electrified to DGPU after waking up.
 
-4. Use the `Preset Variable Method` to force the touchpad to enable GPIO interrupts and discard` SSDT-OC-XOSI`
+4. Use the `Preset Variable Method` to enable GPIO interrupt for touchpad. Discard ` SSDT-OC-XOSI`
 
 5. Due to the increase of ACPI customized content, support for `Honor Magicbook 2018` is removed. You can refer to [here](https://github.com/hjmmc/Honor-Magicbook) for Honor Magicbook 2018.
 
