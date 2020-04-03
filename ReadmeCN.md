@@ -7,19 +7,49 @@
 | 显卡 | Intel UHD620 / nVidia MX150                                                                                        |
 | 内存         | 8GB*2 DDR4 2400                                                                                                    |
 | 键盘     | PS2 键盘，没背光🙃                                                                                   |
-| 触摸板       | ELAN2202（需要_OSI补丁以启用GPIO中断）                                                             |
+| 触摸板       | ELAN2202                                           |
 | 声卡     | ALC256                                                                                                             |
 | 屏幕         | 15.6‘ 1920x1080                                                                                                    |
 | SSD            | Hikivision C2000 512GB + LITE-ON 128GB SATA m.2                                                                    |
 | WiFi+BT        | Broadcom BCM94360CS2                                                                                         |
-| 处理器      | Intel Core i5 8250U / i7 8550U (如果你在使用I5-8250U版本，需要自行定制CPUFriendDataProvider) |
-| BIOS  |    1.30 <br> Secure Boot(安全启动): `OFF`;  Hardware P-Status(HWP，硬件P状态）: `ON`  |
+| 处理器      | Intel Core i5 8250U / i7 8550U </br>(如果你在使用I5-8250U版本，需要自行定制CPUFriendDataProvider) |
+| BIOS  |    1.30 <br> Secure Boot(安全启动): `OFF`;  Hardware P-Status(硬件P状态）: `OFF`  |
 
 ---------
 
 ## 目前情况
 
 ### **你需要对OpenCore有基本的了解！**
+
+
+
+### 什么工作
+- [x] UHD620  
+- [x] 背光控制
+- [x] 背光快捷键
+- [x] 睡眠Hibernation
+- [x] 无线网卡&蓝牙 (替换 BCM94360CS2)
+- [x] 电量显示
+- [x] NVRAM
+- [x] 二合一耳机孔 (2 in 1)
+- [x] 扬声器&机身麦克风
+- [x] HDMI 1.4
+- [x] 触摸板
+- [x] 摄像头
+
+
+### 不工作的部件
+-  Nvidia MX150
+
+### 更新日志
+
+#### 2020-Apr.-3
+- 更新触摸板驱动
+- 合并ACPI表
+- `_QA6`相关的`ACPI Error`使用更优的方式解决
+
+<details>
+<summary>显示所有</summary>
 
 #### 2020-Mar.-9  更新到Opencore 0.5.5
 1. 暂时移除`SMCBatteryManager`, 换用表现更佳的`ACPIBatteryManager`。  
@@ -78,6 +108,8 @@
      <br>
 
     2. 安装过程中，触摸板不工作，需要自己准备一个USB鼠标
+
+</details>
 ------
 ## `ACPI Error`相关
 该hackintosh EFI可能存在一些与“动态OEM表”有关的ACPI问题。    
@@ -95,20 +127,7 @@
 6. 重新启动并检查，看看相关的ACPI Error是否消失了呢 XD.
 --------
 
-## TODOs
 
-* ~~Chinese version of this document(简体中文文档会有的，不过现在用翻译器也能看，I'm just lazy)~~
-
-* ~~Improvements on Hibernation.~~（这机器的电池太TM垃圾了，3400mAh，11.4V用个卵哦）
-
-* BIOS 解锁教程.（咕咕咕）
-
-* ~~Windows 10 启动项~~<br>直接用BIOS的启动菜单吧  <br>
-
-* ~~解决一些奇怪的ACPI Error（不影响使用）~~
-
-
-------
 
 ## 鸣谢 &  看过的教程 & 参考过的案例
 
@@ -124,18 +143,31 @@
 
 6. [Steve Zheng](https://github.com/stevezhengshiqi) for [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) and [XiaoMi-Pro-Hackintosh](https://github.com/daliansky/XiaoMi-Pro-Hackintosh)
 
-7. 我用过的Clover EFI [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
+7. The Clover EFI I have used by [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
 
-8. The `LID and Brightness-Key fix` by [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook)
+8. [hjmmc](https://github.com/hjmmc) :  [Honor-Magicbook](https://github.com/hjmmc/Honor-MagicbookThe) for lid fix
 
-9. The battery hotpatch by [iStarForever](https://github.com/XStar-Dev) 
-
+9. [iStar](https://github.com/XStar-Dev) for battery hotpatch.
 -----
-## 截图 & 我是怎样塞下BCM94360CS2的 
+## 打赏
 
-![  ](https://github.com/Zero-zer0/Matebook_D_Hackintosh_OpenCore/blob/master/截屏2019-12-22下午10.28.37.png)
+> 如果这个项目对你有所帮助，可以考虑给我买罐肥宅快乐水 😂
 
-![   ](https://github.com/Zero-zer0/Matebook_D_Hackintosh_OpenCore/blob/master/BCM94360CS2.jpg)
+|                Wechat                  |
+|--------------------------------------- |
+| ![wechatpay](https://s1.ax1x.com/2020/04/03/GN5Jpj.th.png) |
+
+
+## 截图 & 如何塞下BCM94360CS2
+
+![  ](https://s1.ax1x.com/2020/04/03/GavKHg.md.jpg)
+
+
+当然, DW1820A / 00JT493 / 00JT494 同样可以在Matebook D 2018/ Magicbook 2018上完美工作，不需要屏蔽针脚（无论版本），只是果表⌚️解锁、蓝牙唤起热点相关功能缺失。
+
+![   ](https://s1.ax1x.com/2020/04/03/GaxAZF.png)
+
+![   ](https://s1.ax1x.com/2020/04/03/GazFSI.png)        ![   ](https://s1.ax1x.com/2020/04/03/GazKYj.png)
 
 
 

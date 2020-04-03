@@ -8,11 +8,11 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>plugin-type=1</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-PLUG.aml</string>
+				<string>SSDT-PROP.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -40,14 +40,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Notebook brightness</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-PNLF.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>For Brightness Keys</string>
 				<key>Enabled</key>
 				<true/>
@@ -64,30 +56,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Disable DGPU</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-DDGPU.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Fake ethernet</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-LAN.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-ALS0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>0D6D Fix pair with rename XPRW</string>
 				<key>Enabled</key>
 				<true/>
@@ -101,22 +69,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-PTSWAK.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>dynamic ssdt</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-x3_0-Cpu0Ist.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>dynamic ssdt</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-x3_1-ApIst.aml</string>
 			</dict>
 		</array>
 		<key>Block</key>
@@ -231,7 +183,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>UPBX to XPBX</string>
+				<string>UPBX,0,N to XPBX
+UPBX,0,N to XPBX
+UPBX,0,N to XPBX
+UPBX,0,N to XPBX
+UPBX,0,N to XPBX</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -333,76 +289,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>_LID to XLID</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				X0xJRA==
-				</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>Replace</key>
-				<data>
-				WExJRA==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				RFNEVA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>XLID0 to _LID0</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				WExJRDA=
-				</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>Replace</key>
-				<data>
-				X0xJRDA=
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				RFNEVA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>_QF1 to XQF1</string>
 				<key>Count</key>
 				<integer>0</integer>
@@ -458,6 +344,76 @@
 				<key>Replace</key>
 				<data>
 				WFFGMg==
+				</data>
+				<key>ReplaceMask</key>
+				<data>
+				</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				RFNEVA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>_LID to XLID</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				X0xJRA==
+				</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>
+				</data>
+				<key>OemTableId</key>
+				<data>
+				</data>
+				<key>Replace</key>
+				<data>
+				WExJRA==
+				</data>
+				<key>ReplaceMask</key>
+				<data>
+				</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				RFNEVA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>XLID0 to _LID0</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				WExJRDA=
+				</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>
+				</data>
+				<key>OemTableId</key>
+				<data>
+				</data>
+				<key>Replace</key>
+				<data>
+				X0xJRDA=
 				</data>
 				<key>ReplaceMask</key>
 				<data>
@@ -938,13 +894,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>USBInjectAll.kext</string>
+				<string>USBPorts.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/USBInjectAll</string>
+				<string></string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -977,6 +933,22 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooI2CServices</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>BundlePath</key>
+				<string>VoodooInput.kext</string>
+				<key>Comment</key>
+				<string>MT2</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/VoodooInput</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1239,7 +1211,7 @@
 			<key>ThirdPartyDrives</key>
 			<true/>
 			<key>XhciPortLimit</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>Misc</key>
@@ -1249,7 +1221,7 @@
 		<key>Boot</key>
 		<dict>
 			<key>BuiltinTextRenderer</key>
-			<false/>
+			<true/>
 			<key>ConsoleBehaviourOs</key>
 			<string></string>
 			<key>ConsoleBehaviourUi</key>
@@ -1263,13 +1235,13 @@
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>Resolution</key>
-			<string></string>
+			<string>1920x1080</string>
 			<key>ShowPicker</key>
-			<true/>
+			<false/>
 			<key>TakeoffDelay</key>
 			<integer>6000</integer>
 			<key>Timeout</key>
-			<integer>5</integer>
+			<integer>1</integer>
 			<key>UsePicker</key>
 			<true/>
 		</dict>
@@ -1280,7 +1252,7 @@
 			<key>DisplayDelay</key>
 			<integer>0</integer>
 			<key>DisplayLevel</key>
-			<integer>2147483650</integer>
+			<integer>0</integer>
 			<key>Target</key>
 			<integer>3</integer>
 		</dict>
@@ -1290,13 +1262,13 @@
 				<key>Arguments</key>
 				<string></string>
 				<key>Comment</key>
-				<string>Not signed for security reasons</string>
+				<string>Windows 10</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Name</key>
-				<string>CustomOS</string>
+				<string>Bootcamp WIndows 10</string>
 				<key>Path</key>
-				<string>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)/NVMe(0x1,11-22-33-44-55-66-77-88)/HD(1,GPT,00000000-0000-0000-0000-000000000000,0x800,0x64000)/\EFI\BOOT\BOOTX64.EFI</string>
+				<string>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/NVMe(0x1,20-20-78-52-22-A7-79-64)/HD(1,GPT,2C286468-B10D-11E9-821B-C9B803840AEB,0x800,0x68800)/\EFI\Microsoft\boot\bootmgfw.efi</string>
 			</dict>
 		</array>
 		<key>Security</key>
@@ -1349,6 +1321,8 @@
 			<dict>
 				<key>boot-args</key>
 				<string>brcmfx-country=#a npci=0x2000</string>
+				<key>bootercfg</key>
+				<string>log=0 debug=0 level=0</string>
 				<key>csr-active-config</key>
 				<data>
 				5wMAAA==
@@ -1402,7 +1376,7 @@
 			</array>
 		</dict>
 		<key>WriteFlash</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1411,18 +1385,19 @@
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string>C02710609GUHWVPFB</string>
+			<string>C02726403CDHWVPA8</string>
 			<key>ROM</key>
 			<data>
+			uOhWEynE
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
 			<string>MacBookPro14,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02TD01QHV29</string>
+			<string>C02TXRYKHV29</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>A12EF527-5B3E-51B5-AC23-25C6FF0355FB</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1477,7 +1452,7 @@
 			<key>AppleUserInterfaceTheme</key>
 			<false/>
 			<key>ConsoleControl</key>
-			<false/>
+			<true/>
 			<key>DataHub</key>
 			<false/>
 			<key>DeviceProperties</key>
@@ -1502,9 +1477,9 @@
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
 			<key>IgnoreTextInGraphics</key>
-			<false/>
+			<true/>
 			<key>ProvideConsoleGop</key>
-			<false/>
+			<true/>
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
@@ -1516,7 +1491,7 @@
 			<key>RequestBootVarRouting</key>
 			<true/>
 			<key>SanitiseClearScreen</key>
-			<false/>
+			<true/>
 			<key>UnblockFsConnect</key>
 			<false/>
 		</dict>
