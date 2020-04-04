@@ -110,7 +110,8 @@
     2. 安装过程中，触摸板不工作，需要自己准备一个USB鼠标
 
 </details>
-------
+
+
 ## `ACPI Error`相关
 该hackintosh EFI可能存在一些与“动态OEM表”有关的ACPI问题。    
 
