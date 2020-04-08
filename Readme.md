@@ -144,7 +144,7 @@ A solution to this problem is making these tables force loaded by bootloader.
 -----
 
 
-## Screenshot & How I put BCM94360CS2 into the laptop
+## Screenshot & How to put BCM94360CS2 into the laptop
 
 ![  ](https://s1.ax1x.com/2020/04/03/GavKHg.md.jpg)
 
