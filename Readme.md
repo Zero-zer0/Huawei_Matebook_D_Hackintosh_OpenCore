@@ -143,14 +143,6 @@ A solution to this problem is making these tables force loaded by bootloader.
 
 -----
 
-## Donate
-
-> If you find this project is helpful, you can consider buy me a coke 😂
-
-|                Wechat                  |
-|--------------------------------------- |
-| ![wechatpay](https://s1.ax1x.com/2020/04/03/GN5Jpj.th.png) |
-
 
 ## Screenshot & How I put BCM94360CS2 into the laptop
 
