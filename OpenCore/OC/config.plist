@@ -1166,11 +1166,11 @@ UPBX,0,N to XPBX</string>
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>ShowPicker</key>
-			<false/>
+			<true/>
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
-			<integer>0</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Debug</key>
 		<dict>
@@ -1193,7 +1193,7 @@ UPBX,0,N to XPBX</string>
 				<key>Comment</key>
 				<string>Windows 10</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Name</key>
 				<string>Bootcamp WIndows 10</string>
 				<key>Path</key>
