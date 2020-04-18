@@ -302,7 +302,6 @@ function DL() {
     # Download Kexts
     DBR Rehabman os-x-acpi-battery-driver
     DBR Rehabman os-x-null-ethernet
-    DBR RehabMan os-x-usb-inject-all
     DGR $ACDT Lilu
     DGR $ACDT VirtualSMC
     DGR $ACDT CPUFriend
