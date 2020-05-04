@@ -1116,9 +1116,9 @@ UPBX,0,N to XPBX</string>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
-			<false/>
+			<true/>
 			<key>AppleXcpmCfgLock</key>
-			<false/>
+			<true/>
 			<key>AppleXcpmExtraMsrs</key>
 			<false/>
 			<key>AppleXcpmForceBoost</key>
@@ -1233,7 +1233,7 @@ UPBX,0,N to XPBX</string>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>brcmfx-country=#a npci=0x2000 gfxrst=1</string>
+				<string>brcmfx-country=#a npci=0x2000 gfxrst=1 -v debug=0x100 keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>
 				ZwAAAA==

@@ -42,14 +42,17 @@
 -  Nvidia MX150
 
 ### 更新日志
+2020-Mar.-4
+- 更新到OpenCore 0.5.8
+
+
+<details>
+<summary>显示所有</summary>
 
 #### 2020-Apr.-3
 - 更新触摸板驱动
 - 合并ACPI表
 - `_QA6`相关的`ACPI Error`使用更优的方式解决
-
-<details>
-<summary>显示所有</summary>
 
 #### 2020-Mar.-9  更新到Opencore 0.5.5
 1. 暂时移除`SMCBatteryManager`, 换用表现更佳的`ACPIBatteryManager`。  
@@ -107,25 +110,17 @@
     我加入了 `_OSI`  判断满足OC的多启动需求，虽然不推荐用OC启动Windows/Linux。 
      <br>
 
-    2. 安装过程中，触摸板不工作，需要自己准备一个USB鼠标
+    2. ~~安装过程中，触摸板不工作，需要自己准备一个USB鼠标~~
 
 </details>
 
+## 下载
+你可以直接从Release下载打包好的EFI文件夹：
 
-## `ACPI Error`相关
-该hackintosh EFI可能存在一些与“动态OEM表”有关的ACPI问题。    
+- [Download from release](https://github.com/Zero-zer0/Matebook_D_2018_Hackintosh_OpenCore/releases)
 
-`动态OEM表`是由固件根据您计算机的当前电源状态动态生成的一组SSDT。这些表通过“ _PPC”将当前电源状态传输到系统，这个玩意会被`EC0`的`_QA6`调用，它们与CPU电源管理有关。  
+当让，如果你有**足够强的网络**，你可以Clone这个仓库，并在macOS的终端运行`Makefile.sh`来制作最新的EFI文件夹。当然，你可能遇到各种问题，仍然建议从Release下载。
 
-奇怪的是，这些表无法由OpenCore自动加载。更糟糕的是，macOS可能因卡在与`_QA6`和`_PPC`有关的`APCI Error`而无法启动。
-
-我们可以通过强制加载这些动态SSDT来解决这个问题。  
-1. 使用`Clover`启动Matebook D
-2. 按`F4` 提取整个ACPI表。
-3. 查找所有动态SSDT，其序列号前面有一个x。 <br>加入其中的`SSDT-x3_0-Cpu0Ist.aml`，`SSDT-x3_1-ApIst.aml`两个SSDT即可
-4. 将所有这些`动态SSDT`放入EFI / OC / ACPI
-5. 将这些`SSDT`添加到`config.plist--ACPI--Add`下，根据其他SSDT填写的格式写就好。
-6. 重新启动并检查，看看相关的ACPI Error是否消失了呢 XD.
 --------
 
 
