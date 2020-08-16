@@ -20,6 +20,8 @@
 ## 目前情况
 
 ### **你需要对OpenCore有基本的了解！**
+### 本仓库目前只提供基本的config和ACPI样例
+### 自行配置文件
 
 
 
@@ -41,129 +43,55 @@
 ### 不工作的部件
 -  Nvidia MX150
 
-### 更新日志
-2020-Mar.-4
-- 更新到OpenCore 0.5.8
 
+## Credits
 
-<details>
-<summary>显示所有</summary>
+- [Acidanthera](https://github.com/acidanthera) for OpenCore (and related documents) , Lilu, AppleALC and other awesome projects.
+   - [AirportBrcmFixup]((https://github.com/acidanthera/AirportBrcmFixup)
+   - [AppleALC](https://github.com/acidanthera/AppleALC)
+   - [CPUFriend](https://github.com/acidanthera/CPUFriend)
+   - [HibernationFixup](https://github.com/acidanthera/HibernationFixup)
+   - [Lilu](https://github.com/acidanthera/Lilu)
+   - [OpenCore](https://github.com/acidanthera/OpenCorePkg)
+   - [VoodooPS2](https://github.com/acidanthera/VoodooPS2)
+   - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
+   - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-#### 2020-Apr.-3
-- 更新触摸板驱动
-- 合并ACPI表
-- `_QA6`相关的`ACPI Error`使用更优的方式解决
+- [Apple] for macOS
 
-#### 2020-Mar.-9  更新到Opencore 0.5.5
-1. 暂时移除`SMCBatteryManager`, 换用表现更佳的`ACPIBatteryManager`。  
-2. 感谢 [iStarForever](https://github.com/XStar-Dev)，为本机器制作了电池热补丁       `SSDT-BAT1-HUAWEI`，修复了ACPI中的一些电池错误。  
-    另外，还参考了RehabMan的电源状态修补方法，[详情点我](https://www.tonymacx86.com/threads/solved-battery-charging-and-status-update-problem.263737/page-3)
+- [Daliansky](https://github.com/daliansky) for ALCPlugFix.
 
-3. 加入`SSDT-PTSWAK`修复独显在唤醒后断电失效的问题。  
+- [hjmmc](https://github.com/hjmmc) 
+    - [Honor-Magicbook](https://github.com/hjmmc/Honor-MagicbookThe) for [lid fix](https://github.com/Zero-zer0/Matebook_D_2018_Hackintosh_OpenCore/blob/master/Shared/ACPI/SSDT-LID-Wake-After-Sleep.dsl)
+- [iStar](https://github.com/XStar-Dev) 
+    - [Battery hotpatch](https://github.com/Zero-zer0/Matebook_D_2018_Hackintosh_OpenCore/blob/master/Shared/ACPI/SSDT-BAT1-HUAWEI.dsl).
 
-4. 使用`预置变量法`强制触摸板启用GPIO中断，抛弃`SSDT-OC-XOSI`  
+- [OC-little](https://github.com/daliansky/OC-little) for their handy ACPI Hotpatches and guides for OpenCore.
 
-5. 由于ACPI定制化内容增加，去除对`荣耀Magicbook 2018`的支持,有需要的欢迎围观：[链接](https://github.com/hjmmc/Honor-Magicbook)
+- [RehabMan](https://github.com/RehabMan)
+   - [OS-X-ACPI-Battery-Driver](https://github.com/RehabMan/OS-X-ACPI-Battery-Driver)
+   - [OS-X-Null-Ethernet](https://github.com/RehabMan/OS-X-Null-Ethernet)
 
-6. 强制加载`_PPC`相关的动态表。
+- [Steve Zheng](https://github.com/stevezhengshiqi) 
+    - [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) and [XiaoMi-Pro-Hackintosh](https://github.com/daliansky/XiaoMi-Pro-Hackintosh)
 
-7. 若需要引导`Windows 10`，请阅读相关文档添加
-
-#### 此前的情况
-* 基于OpenCore ~~0.5.3~~ 0.5.5
-
-
-* NVRAM 正常工作。
-
-
-* 声卡 Layout-ID 21 一切正常。  
-
-* ~~CFG被锁了，但是一切能用~~
-    解锁CFG与改变DVMT大小的方法已经找到了，晚些更新。
-<br>
-
-* 网卡换为BCM94360CS2. 使用 [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup) + `brcmfx-country=#a`开启所有频段。
-<br>
-
-* 使用 [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) 以获得更好的CPU变频。
-<br>
-
-* 独显 MX150 用 SSDT-DDGPU屏蔽。
-<br>
-
-* **使用 `USBInjectall.kext` 避免潜在的USB map不一样的问题，增强通用性质。建议自己定制 `USBports.kext` 用 [Hackintool](http://headsoft.com.au/download/mac/Hackintool.zip) 就可，教程很多。**
-<br>
-
-* ~~这个EFI也可以用在MagicBook 14（Kabylake-R）上。 **如果使用`Magicbook 2018`，声卡Layout-ID 需要改为 `56` 或 `57`** (声卡ID使用Device Properties注入)~~
-<br>
-
-* 用之前填写自己的System-UUID。
-<br>
-
-* 如果换了NVMe SSD，可以尝试使用NVMeFix.kext以获得更好的续航。  
-
-* ~~加入`SSDT-TPD0.dsl` 以抛弃`SSDT-OC-XOSI`来启用触摸板的GPIO中断。**注意，这个文件无法直接使用，请看其中的说明。**~~
-
-* 小问题: 
-    1. ~~再唤醒后，屏幕背光需要再次开启盖子才能打开.~~    
-    现在使用 `SSDT-LID-Wake-After-Sleep` 修复, 感谢 [hjmmc](https://github.com/hjmmc) : [Honor-Magicbook](https://github.com/hjmmc/Honor-Magicbook) <br> 
-    我加入了 `_OSI`  判断满足OC的多启动需求，虽然不推荐用OC启动Windows/Linux。 
-     <br>
-
-    2. ~~安装过程中，触摸板不工作，需要自己准备一个USB鼠标~~
-
-</details>
-
-## 下载
-你可以直接从Release下载打包好的EFI文件夹：
-
-- [Download from release](https://github.com/Zero-zer0/Matebook_D_2018_Hackintosh_OpenCore/releases)
-
-当让，如果你有**足够强的网络**，你可以Clone这个仓库，并在macOS的终端运行`Makefile.sh`来制作最新的EFI文件夹。当然，你可能遇到各种问题，仍然建议从Release下载。
-
---------
+- [VoodooI2C Developer Team](https://github.com/VoodooI2C) for their magnificent work on I2C trackpads.  
+   - [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C)
 
 
 
-## 鸣谢 &  看过的教程 & 参考过的案例
 
-1. [Acidanthera](https://github.com/acidanthera) for OpenCore (and related documents) , Lilu, AppleALC and other awesome projects.
+## Guides
+- [Justin](https://github.com/cattyhouse) for  [oc-guide](https://github.com/cattyhouse/oc-guide) 
 
-2. [OC-little](https://github.com/daliansky/OC-little) for their handy ACPI Hotpatches for OpenCore.
+- [xjn](https://github.com/xjn819) for [《使用OpenCore引导黑苹果》](https://blog.xjn819.com/?p=543)
 
-3. [Justin](https://github.com/cattyhouse) for  [oc-guide](https://github.com/cattyhouse/oc-guide) 
+- [Daliansky](https://github.com/daliansky), [bat.bat](https://github.com/williambj1) for [《精解OpenCore》](https://blog.daliansky.net/OpenCore-BootLoader.html)
 
-4. [xjn](https://github.com/xjn819) for [《使用OpenCore引导黑苹果》](https://blog.xjn819.com/?p=543)
+- [Steve Zheng](https://github.com/stevezhengshiqi) for [XiaoMi-Pro-Hackintosh](https://github.com/daliansky/XiaoMi-Pro-Hackintosh)
 
-5. [Daliansky](https://github.com/daliansky), [bat.bat](https://github.com/williambj1) for [《精解OpenCore》](https://blog.daliansky.net/OpenCore-BootLoader.html)
+- The Clover EFI I have used by [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
 
-6. [Steve Zheng](https://github.com/stevezhengshiqi) for [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) and [XiaoMi-Pro-Hackintosh](https://github.com/daliansky/XiaoMi-Pro-Hackintosh)
-
-7. The Clover EFI I have used by [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
-
-8. [hjmmc](https://github.com/hjmmc) :  [Honor-Magicbook](https://github.com/hjmmc/Honor-MagicbookThe) for lid fix
-
-9. [iStar](https://github.com/XStar-Dev) for battery hotpatch.
------
-## 打赏
-
-> 如果这个项目对你有所帮助，可以考虑给我买罐肥宅快乐水 😂
-
-|                Wechat                  |
-|--------------------------------------- |
-| ![wechatpay](https://s1.ax1x.com/2020/04/03/GN5Jpj.th.png) |
-
-
-## 截图 & 如何塞下BCM94360CS2
-
-![  ](https://s1.ax1x.com/2020/04/03/GavKHg.md.jpg)
-
-
-当然, DW1820A / 00JT493 / 00JT494 同样可以在Matebook D 2018/ Magicbook 2018上完美工作，不需要屏蔽针脚（无论版本），只是果表⌚️解锁、蓝牙唤起热点相关功能缺失。
-
-![   ](https://s1.ax1x.com/2020/04/03/GaxAZF.png)
-
-![   ](https://s1.ax1x.com/2020/04/03/GazFSI.png)        ![   ](https://s1.ax1x.com/2020/04/03/GazKYj.png)
-
+- [hjmmc](https://github.com/hjmmc) :  [Honor-Magicbook](https://github.com/hjmmc/Honor-MagicbookThe)
 
 
