@@ -47,7 +47,7 @@
 ## Credits
 
 - [Acidanthera](https://github.com/acidanthera) for OpenCore (and related documents) , Lilu, AppleALC and other awesome projects.
-   - [AirportBrcmFixup]((https://github.com/acidanthera/AirportBrcmFixup)
+   - [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup)
    - [AppleALC](https://github.com/acidanthera/AppleALC)
    - [CPUFriend](https://github.com/acidanthera/CPUFriend)
    - [HibernationFixup](https://github.com/acidanthera/HibernationFixup)
@@ -57,7 +57,7 @@
    - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
    - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-- [Apple] for macOS
+- [Apple](apple.com) for macOS
 
 - [Daliansky](https://github.com/daliansky) for ALCPlugFix.
 
