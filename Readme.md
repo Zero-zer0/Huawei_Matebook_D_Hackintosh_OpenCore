@@ -57,7 +57,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
    - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
    - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-- [Apple](apple.com) for macOS
+- [Apple](https://www.apple.com) for macOS
 
 - [Daliansky](https://github.com/daliansky) for ALCPlugFix.
 
@@ -93,9 +93,6 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 - The Clover EFI I have used by [MOJUNSHOU](https://github.com/MOJUNSHOU) : [MateBooK-D](https://github.com/MOJUNSHOU/MateBooK-D)
 
 - [hjmmc](https://github.com/hjmmc) :  [Honor-Magicbook](https://github.com/hjmmc/Honor-MagicbookThe)
-
-
------
 
 
 ## Adapter for BCM94360CS2

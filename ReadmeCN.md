@@ -57,7 +57,7 @@
    - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
    - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-- [Apple](apple.com) for macOS
+- [Apple](https://www.apple.com) for macOS
 
 - [Daliansky](https://github.com/daliansky) for ALCPlugFix.
 
@@ -77,8 +77,6 @@
 
 - [VoodooI2C Developer Team](https://github.com/VoodooI2C) for their magnificent work on I2C trackpads.  
    - [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C)
-
-
 
 
 ## Guides
