@@ -231,6 +231,7 @@ function ExtractClover() {
 # Extract files from OpenCore
 function ExtractOC() {
     cp -R EFI/BOOT/BOOTx64.efi "../OpenCore/Boot"
+    cp -R EFI/OC/Bootstrap/Bootstrap.efi "../OpenCore/OC/Bootstrap"
     cp -R EFI/OC/OpenCore.efi "../OpenCore/OC"
     cp -R EFI/OC/Drivers/OpenRuntime.efi "../OpenCore/OC/Drivers"
     cp -R EFI/OC/Drivers/OpenCanopy.efi "../OpenCore/OC/Drivers"
@@ -306,7 +307,7 @@ function DL() {
     DGR $ACDT VirtualSMC
     DGR $ACDT CPUFriend
     DGR $ACDT WhateverGreen
-    DGR $ACDT NVMeFix
+    #DGR $ACDT NVMeFix
     DGR $ACDT AirportBrcmFixup
     DGR $ACDT HibernationFixup
     DGR $ACDT VoodooPS2
@@ -315,7 +316,7 @@ function DL() {
     DGR $ACDT AppleALC
     #DGR al3xtjames NoTouchID
     #DGR hieplpvip AsusSMC
-    DGR alexandred VoodooI2C
+    DGR VoodooI2C VoodooI2C
     
     
     #if [[ $NO_XCODE == True ]]; then
