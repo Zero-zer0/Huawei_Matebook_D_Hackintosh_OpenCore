@@ -31,7 +31,7 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 - [x] Backlight shortcut
 - [x] Hibernation
 - [x] Wireless & Bluetooth (replaced stock Intel wireless card by BCM94360CS2)
-- [x] Battery percsentage
+- [x] Battery
 - [x] NVRAM
 - [x] Headphone jack (2 in 1)
 - [x] Speaker & Internal Mic
@@ -42,6 +42,58 @@ English | [简体中文](https://github.com/Zero-zer0/Huawei_Matebook_D_Hackinto
 
 ### What's not working
 -  Nvidia MX150
+
+
+## How to build 
+- You can build the EFI by `Makefile.sh` in macOS. However, the script is unstable.  
+
+- You can build the EFI manually.   
+    - Clone this repo.  
+    - Download required files from latest releases. You can see them in Credits.
+    - Use `Maciasl` or `iasl` to compile all files under `/Shared/ACPI/` from `.dsl` to `.aml`.
+    - The final file tree is shown below:
+   
+ ```   
+├── BOOT
+│   ├── BOOTx64.efi
+└── OC
+    ├── ACPI
+    │   ├── SSDT-BAT1-HUAWEI.aml
+    │   ├── SSDT-BKey.aml
+    │   ├── SSDT-EC.aml
+    │   ├── SSDT-GPRW.aml
+    │   ├── SSDT-LID-Wake-After-Sleep.aml
+    │   ├── SSDT-PROP.aml
+    │   ├── SSDT-PTSWAK.aml
+    │   └── SSDT-TPXX.aml
+    ├── Bootstrap
+    │   └── Bootstrap.efi
+    ├── Drivers
+    │   ├── HFSPlus.efi
+    │   └── OpenRuntime.efi
+    ├── Kexts
+    │   ├── ACPIBatteryManager.kext
+    │   ├── AirportBrcmFixup.kext
+    │   ├── AppleALC.kext
+    │   ├── CPUFriend.kext
+    │   ├── CPUFriendDataProvider.kext
+    │   ├── HibernationFixup.kext
+    │   ├── Lilu.kext
+    │   ├── NullEthernet.kext
+    │   ├── SMCProcessor.kext
+    │   ├── USBPorts.kext
+    │   ├── VirtualSMC.kext
+    │   ├── VoodooI2C.kext
+    │   ├── VoodooI2CHID.kext
+    │   ├── VoodooPS2Controller.kext
+    │   └── WhateverGreen.kext
+    ├── OpenCore.efi
+    ├── Tools
+    │   ├── CleanNvram.efi  (Optional)
+    │   └── VerifyMsrE2.efi (Optional)
+    └── config.plist
+
+```
 
 
 ## Credits

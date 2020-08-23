@@ -43,6 +43,56 @@
 ### 不工作的部件
 -  Nvidia MX150
 
+## 如何构建
+- 你可以在macOS下使用 `Makefile.sh` 构建EFI. 然而，这个脚本并不稳定。
+
+- 你也可以选择手动构建EFI   
+    - 克隆本仓库
+    - 从最新的Release下载所需要的文件。大部分文件的仓库地址已经在Credits下给出。
+    - 使用 `Maciasl` 或 `iasl` 编译在 `/Shared/ACPI/` 的所有`.dsl`文件，得到 `.aml`文件.
+    - 最终的文件结构如下：
+   
+ ```   
+├── BOOT
+│   ├── BOOTx64.efi
+└── OC
+    ├── ACPI
+    │   ├── SSDT-BAT1-HUAWEI.aml
+    │   ├── SSDT-BKey.aml
+    │   ├── SSDT-EC.aml
+    │   ├── SSDT-GPRW.aml
+    │   ├── SSDT-LID-Wake-After-Sleep.aml
+    │   ├── SSDT-PROP.aml
+    │   ├── SSDT-PTSWAK.aml
+    │   └── SSDT-TPXX.aml
+    ├── Bootstrap
+    │   └── Bootstrap.efi
+    ├── Drivers
+    │   ├── HFSPlus.efi
+    │   └── OpenRuntime.efi
+    ├── Kexts
+    │   ├── ACPIBatteryManager.kext
+    │   ├── AirportBrcmFixup.kext
+    │   ├── AppleALC.kext
+    │   ├── CPUFriend.kext
+    │   ├── CPUFriendDataProvider.kext
+    │   ├── HibernationFixup.kext
+    │   ├── Lilu.kext
+    │   ├── NullEthernet.kext
+    │   ├── SMCProcessor.kext
+    │   ├── USBPorts.kext
+    │   ├── VirtualSMC.kext
+    │   ├── VoodooI2C.kext
+    │   ├── VoodooI2CHID.kext
+    │   ├── VoodooPS2Controller.kext
+    │   └── WhateverGreen.kext
+    ├── OpenCore.efi
+    ├── Tools
+    │   ├── CleanNvram.efi  (Optional)
+    │   └── VerifyMsrE2.efi (Optional)
+    └── config.plist
+
+```
 
 ## Credits
 
